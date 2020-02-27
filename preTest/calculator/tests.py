@@ -4,6 +4,7 @@ from django.http import HttpRequest
 from django.template.loader import render_to_string
 from calculator.views import home_page
 from calculator.models import History
+
 class HomepageTest(TestCase):
 
     def test_rootURL_mapping_to_homepageView(self):
