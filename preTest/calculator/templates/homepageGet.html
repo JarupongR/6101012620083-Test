@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="GET">
+        <!-- <label for="user_select_gender">Gender:</label>
+
+        <select name="gender_text" id="user_select_gender">
+            <option value="">-----</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="user_city_subject">City:</label>
+
+        <select name="city_text" id="user_city_subject">
+            <option value="">---------</option>
+            <option value="Ayutthaya">Ayutthaya</option>
+            <option value="Bangkok">Bangkok</option>
+            <option value="Chiangmai">Chiangmai</option>
+            <option value="Kanchanaburi">Kanchanaburi</option>
+            <option value="Krabi">Krabi</option>
+            <option value="Lampang">Lampang</option>
+        </select> -->
+
+        1st Number :<input name="first_number" id="user_first_number" placeholder="Enter your First Number" /><br>
+        2nd Number :<input name="second_number" id="user_second_number" placeholder="Enter your Second Number" /><br>
+        <label for="user_operator_type">Operator :</label>
+
+        <select name="operator_type" id="user_operator_type">
+            <option value="">---------</option>
+            <option value="+">Add(+)</option>
+            <option value="-">Subtract(-)</option>
+            <option value="*">Multiple(*)</option>
+            <option value="/">Divide(/)</option>
+            <option value="%">Modulo(%)</option>
+            <option value="**">Exponent(**)</option>
+            <option value="sqrt">Root(sqrt)</option>
+        </select>
+
+        <input type="submit" id="submit_button" value="Calculate">
+        {% csrf_token %}
+    </form>
+    <br>
+    <table id='user_list_table'>
+        <tr class="header">
+            <th style="width:30%;">Expression</th>
+            <th style="width:10%;">Answer</th>
+            
+        </tr>
+        {% for calculateList in calculateLists %}
+        <tr>
+            <td>{{calculateList.expression}}</td>
+            <td>{{calculateList.answer}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
