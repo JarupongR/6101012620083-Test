@@ -20,5 +20,6 @@ from calculatorGet import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home_pageGet, name='homepageGet'),
+    # path('/', views.home_page, name='homepage'),
+    path('/', views.home_pageGet, name='homepageGet'),
 ]

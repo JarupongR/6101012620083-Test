@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from calculator.models import History
 # Create your views here.
 import math
+
 def home_pageGet(request):
 
     if request.GET.get('first_number', '') != '' and request.GET.get('second_number', '') != '' and request.GET.get('operator_type', '') != '' :
