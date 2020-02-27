@@ -8,25 +8,6 @@
 <body>
     <h1>Calculator</h1>
     <form method="POST">
-        <!-- <label for="user_select_gender">Gender:</label>
-
-        <select name="gender_text" id="user_select_gender">
-            <option value="">-----</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-
-        <label for="user_city_subject">City:</label>
-
-        <select name="city_text" id="user_city_subject">
-            <option value="">---------</option>
-            <option value="Ayutthaya">Ayutthaya</option>
-            <option value="Bangkok">Bangkok</option>
-            <option value="Chiangmai">Chiangmai</option>
-            <option value="Kanchanaburi">Kanchanaburi</option>
-            <option value="Krabi">Krabi</option>
-            <option value="Lampang">Lampang</option>
-        </select> -->
 
         1st Number :<input name="first_number" id="user_first_number" placeholder="Enter your First Number" /><br>
         2nd Number :<input name="second_number" id="user_second_number" placeholder="Enter your Second Number" /><br>
@@ -46,7 +27,11 @@
         <input type="submit" id="submit_button" value="Calculate">
         {% csrf_token %}
     </form>
-    <br>
+    <!-- <form method="GET">
+
+        <input type="submit" id="submit_button" value="Calculate">
+        {% csrf_token %}
+    </form> -->
     <table id='user_list_table'>
         <tr class="header">
             <th style="width:10%;">X(FirstNumber)</th>
@@ -64,5 +49,6 @@
         </tr>
         {% endfor %}
     </table>
+    
 </body>
 </html>

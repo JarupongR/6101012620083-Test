@@ -52,3 +52,12 @@
 1582736646139	Marionette	INFO	Listening on port 37977
 1582736646189	Marionette	WARN	TLS certificate errors will be ignored for this session
 1582736649985	Marionette	INFO	Stopped listening on port 37977
+1582791980681	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileLraJwW"
+1582791981044	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1582791981396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1582791981396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1582791981396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1582791981396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1582791983151	Marionette	INFO	Listening on port 37569
+1582791983190	Marionette	WARN	TLS certificate errors will be ignored for this session
+1582791990321	Marionette	INFO	Stopped listening on port 37569

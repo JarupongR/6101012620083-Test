@@ -45,7 +45,8 @@ class NewVisitorTest(LiveServerTestCase):
         #He want to find result of 12345 + 12345 
         #Then he see two textboxs with "Enter your number".
         #So he enter 12345,12345 that he want to sum straight away.
-        #He types "Signal" into a text box
+        #And he select on +(Sum) in dropdown
+        #He click on Calculate button
         inputbox1 = self.browser.find_element_by_id('user_first_number')
         inputbox2 = self.browser.find_element_by_id('user_second_number')
         operation_dropdown = Select(self.browser.find_element_by_id('user_operator_type'))  
@@ -64,13 +65,44 @@ class NewVisitorTest(LiveServerTestCase):
         button.send_keys(Keys.ENTER)
         time.sleep(2)
 
-        #After that he still see a ton of tutor user that agree 
-        #to teach with that subject 
+        #After that he saw his first number,second number ,expression
+        # and his answer in table below 
         table = self.browser.find_element_by_id('user_list_table')
         rows = table.find_elements_by_tag_name('td')
         self.assertIn('24690.0', [row.text for row in rows])
         time.sleep(1)
 
+        #he still want to do his Signal's exercise more
+        #He want to find result of 12345 - 12345 
+        #Then he see two textboxs with "Enter your number".
+        #So he enter 12345,12345 that he want to subtract straight away.
+        #And he select on -(Subtract) in dropdown
+        #He click on Calculate button
+        inputbox1 = self.browser.find_element_by_id('user_first_number')
+        inputbox2 = self.browser.find_element_by_id('user_second_number')
+        operation_dropdown = Select(self.browser.find_element_by_id('user_operator_type'))  
+        button = self.browser.find_element_by_id('submit_button')
+        self.assertEqual(
+            inputbox1.get_attribute('placeholder'),
+            'Enter your First Number'
+        )
+        self.assertEqual(
+            inputbox2.get_attribute('placeholder'),
+            'Enter your Second Number'
+        )
+        inputbox1.send_keys('12345')
+        inputbox2.send_keys('12345')
+        operation_dropdown.select_by_visible_text('Subtract(-)')  
+        button.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+        #After that he saw a list of his first number,second number ,expression
+        # and his answer in table below 
+        table = self.browser.find_element_by_id('user_list_table')
+        rows = table.find_elements_by_tag_name('td')
+        self.assertIn('24690.0', [row.text for row in rows])
+        self.assertIn('0.0', [row.text for row in rows])
+        time.sleep(1)
 
         self.fail('finist the test !!')
          
