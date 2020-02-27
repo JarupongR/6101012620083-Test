@@ -49,12 +49,16 @@
     <br>
     <table id='user_list_table'>
         <tr class="header">
+            <th style="width:10%;">X(FirstNumber)</th>
+            <th style="width:10%;">Y(SecondNumber)</th>
             <th style="width:30%;">Expression</th>
             <th style="width:10%;">Answer</th>
             
         </tr>
         {% for calculateList in calculateLists %}
         <tr>
+            <td>{{calculateList.firstNumber}}</td>
+            <td>{{calculateList.secondNumber}}</td>
             <td>{{calculateList.expression}}</td>
             <td>{{calculateList.answer}}</td>
         </tr>
