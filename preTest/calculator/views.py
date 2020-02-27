@@ -20,7 +20,7 @@ def home_page(request):
         result = x**y if operator == '**' else result
         result = math.sqrt(x) if operator == 'sqrt' else result
     
-        History.objects.create(expression= str(x)+operator+str(y),answer = str(result))
+        History.objects.create(firstNumber= str(x),secondNumber=str(y),expression= str(x)+operator+str(y),answer = str(result))
         calculateLists = History.objects.all()
 
         return render(request,'homepage.html',{
